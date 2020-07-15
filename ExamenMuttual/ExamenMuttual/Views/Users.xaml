@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ExamenMuttual.Views.Users">
+
+    <StackLayout>
+        <StackLayout>
+            <StackLayout HorizontalOptions="Center" VerticalOptions="Start">
+                <Image x:Name="imgBanner" Source="banner.png" ></Image>
+
+                <Label Margin="0,0,0,10" Text="Alta de usuario" FontAttributes="Bold" FontSize="Large" TextColor="Gray" HorizontalTextAlignment="Center" ></Label>
+                <Entry x:Name="txtPersonId" Placeholder="Usuario id"></Entry>
+                <Entry x:Name="txtName" Placeholder="Ingrese nombre"></Entry>
+                <Entry x:Name="txtCorreo" Placeholder="Ingrese Correo"></Entry>
+
+                <StackLayout  HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
+                    <Button x:Name="btnAdd" WidthRequest="200" Text="Agregar"    Clicked="BtnAdd_Clicked" />
+                    <Button x:Name="btnRead" WidthRequest="200" Text="Buscar"  Clicked="BtnRetrieve_Clicked" />
+                </StackLayout>
+                <StackLayout HorizontalOptions="CenterAndExpand" Orientation="Horizontal">
+                    <Button x:Name="btnUpdate" WidthRequest="200" Text="Actualizar" Clicked="BtnUpdate_Clicked"/>
+                    <Button x:Name="btnDelete" WidthRequest="200" Text="Eliminar" Clicked="BtnDelete_Clicked" />
+                </StackLayout>
+                <ListView x:Name="lstPersons">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextCell Text="{Binding Name}" Detail="{Binding PersonID}"></TextCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+
+            </StackLayout>
+        </StackLayout>
+    </StackLayout>
+
+</ContentPage>
